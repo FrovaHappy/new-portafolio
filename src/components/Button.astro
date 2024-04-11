@@ -4,33 +4,46 @@
  */
 interface Props {
   size: "small" | "medium" | "big";
+  tag?: "a" | "button" | "div";
+  url?: string;
   text: string;
   style: "primary" | "secondary" | "danger";
+  id?: string;
 }
-const { size, style, text } = Astro.props;
+const { size, style, text, id, tag: Tag = "div", url = "#" } = Astro.props;
+const aProps =
+  Tag == "a"
+    ? {
+        href: url,
+        target: "_blank",
+        rel: "noopener noreferrer",
+      }
+    : {};
 ---
 
-<div class={`base ${size} ${style}`}>
-  <slot name="alignRight" class={`icon--${size}`} />
+<Tag class={`base ${size} ${style}`} id={id} {...aProps}>
+  <slot name="alignRight" />
   {text}
-  <slot name="alignLeft" class={`icon--${size}`} />
-</div>
+  <slot name="alignLeft" />
+</Tag>
 <style style="scss">
   .base {
     --h: 28px;
     --p: var(--padding-1x);
     --r: var(--radius-1x);
+    --b: var(--color-primary);
     width: var(--content-max);
     cursor: pointer;
     box-sizing: border-box;
     display: flex;
+    gap: var(--p);
     align-items: center;
     color: white;
     height: var(--h);
     padding: calc(var(--p) / 2) calc(var(--p));
     font-size: calc(var(--h) - var(--p) * 2);
     background: var(--color-primary);
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--b);
     border-radius: var(--r);
   }
   .medium {
@@ -45,5 +58,9 @@ const { size, style, text } = Astro.props;
   }
   .secondary {
     background: transparent;
+  }
+  .danger {
+    --b: var(--color-danger);
+    background: var(--color-danger);
   }
 </style>
