@@ -1,0 +1,49 @@
+---
+/**
+ * name slot support `alignRight` and `alignLeft`
+ */
+interface Props {
+  size: "small" | "medium" | "big";
+  text: string;
+  style: "primary" | "secondary" | "danger";
+}
+const { size, style, text } = Astro.props;
+---
+
+<div class={`base ${size} ${style}`}>
+  <slot name="alignRight" class={`icon--${size}`} />
+  {text}
+  <slot name="alignLeft" class={`icon--${size}`} />
+</div>
+<style style="scss">
+  .base {
+    --h: 28px;
+    --p: var(--padding-1x);
+    --r: var(--radius-1x);
+    width: var(--content-max);
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: white;
+    height: var(--h);
+    padding: calc(var(--p) / 2) calc(var(--p));
+    font-size: calc(var(--h) - var(--p) * 2);
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--r);
+  }
+  .medium {
+    --h: calc(32px + var(--padding-2x));
+    --p: var(--padding-2x);
+    --r: var(--radius-2x);
+  }
+  .big {
+    --h: calc(48px + var(--padding-3x));
+    --p: var(--padding-3x);
+    --r: var(--radius-2x);
+  }
+  .secondary {
+    background: transparent;
+  }
+</style>
