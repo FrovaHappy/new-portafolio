@@ -1,10 +1,10 @@
 ---
 interface Props {
-  title: string
-  description: string
+  title: string;
+  description: string;
 }
 
-const { title, description } = Astro.props
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,10 +24,24 @@ const { title, description } = Astro.props
 </html>
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --color-primary: blue;
+    --color-danger: #f76c1b;
+    --color-text: #e0e0e0;
+    --color-text-alt: #cecece;
+    --color-background: #202020;
+    --color-content: #252525;
+    --color-content-alt: #2c2c2c;
+
+    --content-min: min-content;
+    --content-max: max-content;
+    --content-full: -webkit-fill-available;
+
+    --radius-1x: 4px;
+    --radius-2x: 8px;
+    --radius-3x: 16px;
+    --padding-1x: 4px;
+    --padding-2x: 8px;
+    --padding-3x: 16px;
   }
   html {
     font-family: system-ui, sans-serif;
