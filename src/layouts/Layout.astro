@@ -43,10 +43,22 @@ const { title, description } = Astro.props;
     --padding-2x: 8px;
     --padding-3x: 16px;
   }
+  /** Resets */
+  button,
+  a,
+  input,
+  textarea {
+    all: unset;
+  }
+
   html {
     font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
+  }
+  svg {
+    height: 100%;
+    aspect-ratio: 1/1;
   }
   code {
     font-family:
