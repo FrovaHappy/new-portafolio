@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+---
+
+<li>
+  <slot />
+  <p>{name}</p>
+</li>
+<style style="scss">
+  li {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+    gap: var(--padding-2x);
+  }
+  p {
+    all: unset;
+    color: var(--color-text-alt);
+    font-size: 16px;
+  }
+</style>
