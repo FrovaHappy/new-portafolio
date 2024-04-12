@@ -1,0 +1,86 @@
+---
+import IconJavaScript from "../icons/IconJavaScript.astro";
+import IconCss from "../icons/IconCss.astro";
+import IconHtml from "../icons/IconHtml.astro";
+import IconSass from "../icons/IconSass.astro";
+import IconTypeScript from "../icons/IconTypeScript.astro";
+import IconNodeJs from "../icons/IconNodeJs.astro";
+import IconReactJs from "../icons/IconReactJs.astro";
+import IconMongoDb from "../icons/IconMongoDb.astro";
+import IconExpressJs from "../icons/IconExpressJs.astro";
+import IconNextJs from "../icons/IconNextJs.astro";
+import IconAstro from "../icons/IconAstro.astro";
+import IconPrismaOrm from "../icons/IconPrismaOrm.astro";
+import IconVitest from "../icons/IconVitest.astro";
+import Tech from "./Tech.astro";
+interface Data {
+  title: string;
+  stack: { name: string; icon: (_props: Record<string, any>) => any }[];
+}
+const technologies: Data = {
+  title: "Tecnologías y Frameworks",
+  stack: [
+    { name: "Javascript", icon: IconJavaScript },
+    { name: "CSS", icon: IconCss },
+    { name: "HTML", icon: IconHtml },
+    { name: "Sass", icon: IconSass },
+    { name: "TypeScript", icon: IconTypeScript },
+    { name: "NodeJS", icon: IconNodeJs },
+    { name: "ReactJs", icon: IconReactJs },
+    { name: "MongoBB", icon: IconMongoDb },
+    { name: "ExpressJs", icon: IconExpressJs },
+  ],
+};
+const learnings: Data = {
+  title: "Aprendiendo",
+  stack: [
+    { name: "NextJs", icon: IconNextJs },
+    { name: "Astro", icon: IconAstro },
+    { name: "Prisma Orm", icon: IconPrismaOrm },
+    { name: "Vitest", icon: IconVitest },
+  ],
+};
+const Sections = [technologies, learnings];
+---
+
+<section>
+  <h2>Habilidades</h2>
+  {
+    Sections.map(({ title, stack }) => {
+      return (
+        <article>
+          <h3>{title}</h3>
+          <ul>
+            {stack.map(({ name, icon: Icon }) => (
+              <Tech name={name}>
+                <Icon />
+              </Tech>
+            ))}
+          </ul>
+        </article>
+      );
+    })
+  }
+</section>
+<style style="scss">
+  h3,
+  h2 {
+    color: var(--color-text-alt);
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-4x);
+  }
+  article {
+    background: var(--color-content);
+    padding: var(--padding-3x);
+    gap: var(--padding-3x);
+  }
+  ul {
+    all: unset;
+    display: flex;
+    gap: var(--padding-3x);
+    flex-wrap: wrap;
+  }
+</style>
