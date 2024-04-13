@@ -4,6 +4,7 @@ import IconBrandGithub from "../icons/IconBrandGithub.astro";
 import IconFile from "../icons/IconFile.astro";
 import IconLink from "../icons/IconLink.astro";
 import Button from "./Button.astro";
+import Typography from "./Typography.astro";
 
 interface Props extends ProjectData {}
 const { title, links, description, image, technologies } = Astro.props;
@@ -17,11 +18,11 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
 <li>
   <img src={image} alt={`imagen del proyecto ${title}`} loading="lazy" />
   <div class="content">
-    <h3>{title}</h3>
+    <Typography tag="h4" bold>{title}</Typography>
     <div>
       {technologies.map((tech) => <span class="tech">{tech.name}</span>)}
     </div>
-    <p>{description}</p>
+    <Typography tag="p">{description}</Typography>
     <div>
       {
         links.map((link) => {

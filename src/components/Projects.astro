@@ -3,10 +3,11 @@ import projects from "../const/projects";
 import IconArrowRight from "../icons/IconArrowRight.astro";
 import Button from "./Button.astro";
 import ProjectCard from "./ProjectCard.astro";
+import Typography from "./Typography.astro";
 ---
 
 <section>
-  <h2>Proyectos</h2>
+  <Typography tag="h3" bold>Proyectos</Typography>
   <ul>
     {projects.map((p) => <ProjectCard {...p} />)}
   </ul>
