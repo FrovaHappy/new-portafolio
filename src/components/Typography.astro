@@ -1,0 +1,48 @@
+---
+interface Props {
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p";
+  bold?: boolean;
+}
+const { tag: Tag, bold = false } = Astro.props;
+---
+
+<Tag class={bold ? "bold" : undefined}><slot /></Tag>
+<style style="scss">
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    all: unset;
+    --bold: 0;
+    padding: 0;
+    font-weight: calc(500 + var(--bold));
+    color: var(--color-text);
+    text-wrap: pretty;
+  }
+  h1 {
+    font-size: 72px;
+  }
+  h2 {
+    font-size: 48px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+    padding: 0;
+    color: var(--color-text-alt);
+    text-wrap: balance;
+  }
+  .bold {
+    --bold: 200;
+  }
+</style>
