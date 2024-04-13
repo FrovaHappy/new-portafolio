@@ -4,13 +4,22 @@
  */
 interface Props {
   size: "small" | "medium" | "big";
+  className?: string;
   tag?: "a" | "button" | "div";
   url?: string;
   text: string;
   style: "primary" | "secondary" | "danger";
   id?: string;
 }
-const { size, style, text, id, tag: Tag = "div", url = "#" } = Astro.props;
+const {
+  size,
+  style,
+  text,
+  id,
+  tag: Tag = "div",
+  url = "#",
+  className = "",
+} = Astro.props;
 const aProps =
   Tag == "a"
     ? {
@@ -21,8 +30,9 @@ const aProps =
     : {};
 ---
 
-<Tag class={`base ${size} ${style}`} id={id} {...aProps}>
+<Tag class={`base ${size} ${style} ${className}`} id={id} {...aProps}>
   <slot name="alignRight" />
+  <slot />
   {text}
   <slot name="alignLeft" />
 </Tag>
