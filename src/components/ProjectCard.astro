@@ -1,0 +1,71 @@
+---
+import type { ProjectData } from "../const/projects";
+import IconBrandGithub from "../icons/IconBrandGithub.astro";
+import IconFile from "../icons/IconFile.astro";
+import IconLink from "../icons/IconLink.astro";
+import Button from "./Button.astro";
+
+interface Props extends ProjectData {}
+const { title, links, description, image, technologies } = Astro.props;
+const Icons: Record<string, (_props: Record<string, any>) => any> = {
+  IconFile,
+  IconLink,
+  IconBrandGithub,
+};
+---
+
+<li>
+  <img src={image} alt={`imagen del proyecto ${title}`} loading="lazy" />
+  <div class="content">
+    <h3>{title}</h3>
+    <div>
+      {technologies.map((tech) => <span class="tech">{tech.name}</span>)}
+    </div>
+    <p>{description}</p>
+    <div>
+      {
+        links.map((link) => {
+          const Icon = Icons[link.icon] ?? IconLink;
+          return (
+            <Button
+              size="small"
+              style="secondary"
+              tag="a"
+              text={link.name}
+              url={link.url}
+              className="linkBtn"
+            >
+              <Icon slot="alignRight" />
+            </Button>
+          );
+        })
+      }
+    </div>
+  </div>
+</li>
+<style style="scss">
+  li {
+    display: flex;
+    gap: var(--padding-2x) var(--padding-3x);
+    padding: var(--padding-3x);
+    background-color: var(--color-content);
+    color: var(--color-text-alt);
+  }
+  img {
+    grid-row: 1/5;
+    height: 300px;
+    height: calc(300px - var(--padding-2x) * 2);
+    aspect-ratio: 16/9;
+  }
+  div {
+    display: flex;
+    gap: var(--padding-2x);
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+  .tech {
+    padding: var(--padding-1x);
+  }
+</style>
