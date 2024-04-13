@@ -1,0 +1,25 @@
+---
+import projects from "../const/projects";
+import IconArrowRight from "../icons/IconArrowRight.astro";
+import Button from "./Button.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section>
+  <h2>Proyectos</h2>
+  <ul>
+    {projects.map((p) => <ProjectCard {...p} />)}
+  </ul>
+  <Button
+    size="medium"
+    style="secondary"
+    text="Ver Más Proyectos"
+    id="projects-btn"><IconArrowRight slot="alignLeft" /></Button
+  >
+</section>
+<script>
+  const $projectBtn = document.querySelector("#projects-btn");
+  $projectBtn?.addEventListener("click", () => {
+    console.log("hola");
+  });
+</script>
