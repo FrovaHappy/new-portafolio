@@ -2,11 +2,13 @@
 interface Props {
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p";
   bold?: boolean;
+  wrap?: "pretty" | "balance";
 }
-const { tag: Tag, bold = false } = Astro.props;
+const { tag: Tag, bold = false, wrap = "pretty" } = Astro.props;
+const className = `${bold ? "bold" : ""} wrap--${wrap}`;
 ---
 
-<Tag class={bold ? "bold" : undefined}><slot /></Tag>
+<Tag class={className}><slot /></Tag>
 <style style="scss">
   h1,
   h2,
@@ -14,12 +16,22 @@ const { tag: Tag, bold = false } = Astro.props;
   h4,
   h5,
   p {
-    all: unset;
     --bold: 0;
+    --wrap: pretty;
+    all: unset;
+    display: block;
     padding: 0;
     font-weight: calc(500 + var(--bold));
     color: var(--color-text);
-    text-wrap: pretty;
+    text-wrap: var(--wrap);
+  }
+  .wrap {
+    &--pretty {
+      --wrap: pretty;
+    }
+    &--balance {
+      --wrap: balance;
+    }
   }
   h1 {
     font-size: 72px;
