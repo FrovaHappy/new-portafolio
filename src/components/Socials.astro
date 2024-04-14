@@ -1,0 +1,37 @@
+---
+import Button from "./Button.astro";
+import IconBrandLinkedin from "../icons/IconBrandLinkedin.astro";
+import IconBrandGithub from "../icons/IconBrandGithub.astro";
+import IconMail from "../icons/IconMail.astro";
+---
+
+<div>
+  <Button
+    size="small"
+    style="secondary"
+    text="LinkedIn"
+    tag="a"
+    url="https://github.com/FrovaHappy"><IconBrandLinkedin /></Button
+  >
+  <Button
+    size="small"
+    style="secondary"
+    text="Github"
+    tag="a"
+    url="https://www.linkedin.com/in/frovahappy"><IconBrandGithub /></Button
+  >
+  <Button
+    size="small"
+    style="secondary"
+    text="happypro5.0@gmail.com"
+    tag="a"
+    url="mailto:happypro5.0@gmail.com"><IconMail /></Button
+  >
+</div>
+<style style="scss">
+  div {
+    display: flex;
+    gap: var(--padding-2x);
+    width: var(--content-min);
+  }
+</style>
