@@ -1,4 +1,5 @@
 ---
+import About from "../components/About.astro";
 import Projects from "../components/Projects.astro";
 import Technologies from "../components/Technologies.astro";
 import Layout from "../layouts/Layout.astro";
@@ -8,6 +9,15 @@ import Layout from "../layouts/Layout.astro";
   title="Welcome to Astro."
   description="Este es mi portafolio donde presento las diferente tecnologías y experiencias que tengo en las diferentes herramientas"
 >
-  <Projects />
-  <Technologies />
+  <main>
+    <Projects />
+    <Technologies />
+    <About />
+  </main>
 </Layout>
+<style style="scss">
+  main {
+    max-width: var(--content-max-width);
+    margin: auto;
+  }
+</style>
