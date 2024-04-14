@@ -13,6 +13,7 @@ import IconAstro from "../icons/IconAstro.astro";
 import IconPrismaOrm from "../icons/IconPrismaOrm.astro";
 import IconVitest from "../icons/IconVitest.astro";
 import Tech from "./Tech.astro";
+import Typography from "./Typography.astro";
 interface Data {
   title: string;
   stack: { name: string; icon: (_props: Record<string, any>) => any }[];
@@ -44,7 +45,7 @@ const Sections = [technologies, learnings];
 ---
 
 <section>
-  <h2>Habilidades</h2>
+  <Typography tag="h3" bold>Habilidades</Typography>
   {
     Sections.map(({ title, stack }) => {
       return (
