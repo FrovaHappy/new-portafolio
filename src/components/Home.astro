@@ -1,0 +1,46 @@
+---
+import IconFile from "../icons/IconFile.astro";
+import Button from "./Button.astro";
+import Socials from "./Socials.astro";
+import Typography from "./Typography.astro";
+---
+
+<section>
+  <div>
+    <Socials />
+    <x-title>
+      <Typography tag="h1" bold><span>Francisco</span> Vera</Typography>
+      <Typography tag="h4" bold
+        ><Typography tag="span">Alias</Typography> Frova Happy</Typography
+      >
+    </x-title>
+    <Typography tag="h5"
+      >Soy <span>Desarrollador Full-Stack</span> en tecnologías basadas en Node.js
+      y llevo<span> +2 años </span> Aplicaciones,</Typography
+    >
+    <Button size="big" style="primary" text="Curriculum"
+      ><IconFile slot="alignRight" /></Button
+    >
+  </div>
+  <img src="/images/logo-big.webp" alt="imagen del logo grande" />
+</section>
+<style style="scss">
+  span {
+    color: var(--color-primary);
+  }
+  section {
+    display: flex;
+    gap: var(--padding-3x);
+    min-height: 100vh;
+    align-items: center;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-5x);
+  }
+  img {
+    object-fit: contain;
+    height: 250px;
+  }
+</style>
