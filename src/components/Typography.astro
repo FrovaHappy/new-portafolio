@@ -1,6 +1,6 @@
 ---
 interface Props {
-  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p";
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span";
   bold?: boolean;
   wrap?: "pretty" | "balance";
   id?: string;
@@ -16,7 +16,8 @@ const className = `${bold ? "bold" : ""} wrap--${wrap}`;
   h3,
   h4,
   h5,
-  p {
+  p,
+  span {
     --bold: 0;
     --wrap: pretty;
     all: unset;
@@ -26,6 +27,9 @@ const className = `${bold ? "bold" : ""} wrap--${wrap}`;
     font-weight: calc(500 + var(--bold));
     color: var(--color-text);
     text-wrap: var(--wrap);
+  }
+  span {
+    display: inline;
   }
   x-anchor {
     position: absolute;
