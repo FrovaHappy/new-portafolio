@@ -24,18 +24,20 @@ const { title, description } = Astro.props;
 </html>
 <style is:global>
   :root {
-    --color-primary: blue;
+    --color-primary: #008ff5;
     --color-danger: #f76c1b;
     --color-text: #e0e0e0;
     --color-text-alt: #cecece;
     --color-background: #202020;
     --color-content: #252525;
     --color-content-alt: #2c2c2c;
-    --margin-nav: -50px;
+    --margin-nav: -80px;
     --content-min: min-content;
     --content-max: max-content;
     --content-max-width: 1100px;
     --content-full: -webkit-fill-available;
+
+    --z-nav: 1;
 
     --radius-1x: 4px;
     --radius-2x: 8px;
@@ -58,6 +60,7 @@ const { title, description } = Astro.props;
     font-family: system-ui, sans-serif;
     background: #13151a;
     background-size: 224px;
+    scroll-behavior: smooth;
   }
   svg {
     height: 100%;
