@@ -5,6 +5,7 @@ import Socials from "./Socials.astro";
 import Typography from "./Typography.astro";
 ---
 
+<Typography tag="span" id="home" />
 <section>
   <div>
     <Socials />
@@ -29,9 +30,10 @@ import Typography from "./Typography.astro";
     color: var(--color-primary);
   }
   section {
+    margin-top: calc(var(--margin-nav) * -1);
     display: flex;
     gap: var(--padding-3x);
-    min-height: 100vh;
+    min-height: calc(100vh + var(--margin-nav));
     align-items: center;
   }
   div {
