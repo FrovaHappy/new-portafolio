@@ -1,0 +1,76 @@
+---
+import Typography from "./Typography.astro";
+---
+
+<nav>
+  <div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+      <li><a href="#skills">Habilidades</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const $nav = document.querySelector("nav");
+  window.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+    window.scrollY !== 0
+      ? $nav?.classList.add("scrolling")
+      : $nav?.classList.remove("scrolling");
+  });
+</script>
+<style style="scss">
+  ul,
+  li {
+    all: unset;
+  }
+  ul {
+    display: flex;
+    gap: var(--padding-5x);
+  }
+  a {
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: 0.2s ease;
+    border-radius: var(--padding-5x);
+    &:hover {
+      background-color: var(--color-text);
+      color: var(--color-background);
+    }
+  }
+  nav {
+    z-index: var(--z-nav);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: margin-top 0.3s ease;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: min-content;
+    margin: 0 auto;
+    background-color: #0000;
+    padding: 0 var(--padding-5x);
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+  }
+  .scrolling {
+    margin: 20px 0 0 0;
+  }
+  .scrolling > div {
+    background-color: color-mix(
+      in srgb,
+      var(--color-background) 70%,
+      transparent
+    );
+    backdrop-filter: blur(20px);
+  }
+</style>
