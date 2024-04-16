@@ -47,26 +47,30 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
 <style style="scss">
   li {
     display: flex;
+    align-items: center;
     gap: var(--padding-2x) var(--padding-3x);
     padding: var(--padding-3x);
     background-color: var(--color-content);
+    border-radius: var(--padding-3x);
     color: var(--color-text-alt);
   }
   img {
-    grid-row: 1/5;
-    height: 300px;
-    height: calc(300px - var(--padding-2x) * 2);
+    max-width: 400px;
     aspect-ratio: 16/9;
   }
   div {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--padding-2x);
   }
   .content {
     display: flex;
     flex-direction: column;
+    gap: var(--padding-3x);
   }
   .tech {
-    padding: var(--padding-1x);
+    background-color: var(--color-content-alt);
+    border-radius: var(--padding-1x);
+    padding: var(--padding-1x) calc(var(--padding-1x) * 2);
   }
 </style>

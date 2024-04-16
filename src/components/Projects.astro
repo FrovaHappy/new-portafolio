@@ -14,13 +14,13 @@ import css from "@/styles/shared.module.scss";
   >
   <ul>
     {projects.map((p) => <ProjectCard {...p} />)}
+    <Button
+      size="medium"
+      style="secondary"
+      text="Ver Más Proyectos"
+      id="projects-btn"><IconArrowRight slot="alignLeft" /></Button
+    >
   </ul>
-  <Button
-    size="medium"
-    style="secondary"
-    text="Ver Más Proyectos"
-    id="projects-btn"><IconArrowRight slot="alignLeft" /></Button
-  >
 </section>
 <script>
   const $projectBtn = document.querySelector("#projects-btn");
@@ -28,3 +28,17 @@ import css from "@/styles/shared.module.scss";
     console.log("hola");
   });
 </script>
+<style style="scss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-4x);
+  }
+  ul {
+    all: unset;
+    padding-left: var(--padding-5x);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3x);
+  }
+</style>

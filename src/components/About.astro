@@ -9,22 +9,29 @@ import css from "@/styles/shared.module.scss";
   <Typography tag="h3" bold id="about"
     ><IconTitleShape class={css.iconTitle} /> Sobre Mi</Typography
   >
-  <div>
-    <img src="/images/me.png" alt="Mi imagen personal" />
-    <x-text>
-      <Typography tag="h4" wrap="balance">
-        Como todos los programadores me apasiona la programación , me gusta
-        crear características que le puedan servir a otras personas.
-      </Typography>
-      <Typography tag="h4" wrap="balance">
-        Me he formado en gran parte de manera autodidacta, usando de punto de
-        partida lo aprendido el año y medio que estuve en la facultad
-      </Typography>
-    </x-text>
-  </div>
-  <Socials />
+  <article>
+    <div>
+      <img src="/images/me.png" alt="Mi imagen personal" />
+      <x-text>
+        <Typography tag="h4" wrap="balance">
+          Como todos los programadores me apasiona la programación , me gusta
+          crear características que le puedan servir a otras personas.
+        </Typography>
+        <Typography tag="h4" wrap="balance">
+          Me he formado en gran parte de manera autodidacta, usando de punto de
+          partida lo aprendido el año y medio que estuve en la facultad
+        </Typography>
+      </x-text>
+    </div>
+    <Socials />
+  </article>
 </section>
 <style style="scss">
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-4x);
+  }
   img {
     height: 250px;
     aspect-ratio: 1/1;
@@ -34,5 +41,8 @@ import css from "@/styles/shared.module.scss";
   div {
     display: flex;
     gap: var(--padding-4x);
+  }
+  article {
+    padding-left: var(--padding-5x);
   }
 </style>
