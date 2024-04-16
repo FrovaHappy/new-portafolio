@@ -55,6 +55,7 @@ const aProps =
     background: var(--color-primary);
     border: 2px solid var(--b);
     border-radius: var(--r);
+    transition: 0.2s ease;
   }
   .medium {
     --h: calc(32px + var(--padding-3x));
@@ -66,9 +67,19 @@ const aProps =
     --p: var(--padding-3x);
     --r: var(--radius-3x);
   }
+  .primary {
+    &:hover {
+      --b: color-mix(in srgb, var(--color-primary), #fff 15%);
+      background: var(--b);
+    }
+  }
   .secondary {
     background: transparent;
     --b: var(--color-text-alt);
+    &:hover {
+      --b: color-mix(in srgb, var(--color-primary), #fff 15%);
+      color: var(--b);
+    }
   }
   .danger {
     --b: var(--color-danger);
