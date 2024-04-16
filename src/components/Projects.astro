@@ -1,13 +1,17 @@
 ---
 import projects from "../const/projects";
 import IconArrowRight from "../icons/IconArrowRight.astro";
+import IconTitleShape from "../icons/IconTitleShape.astro";
 import Button from "./Button.astro";
 import ProjectCard from "./ProjectCard.astro";
 import Typography from "./Typography.astro";
+import css from "@/styles/shared.module.scss";
 ---
 
 <section>
-  <Typography tag="h3" bold id="projects">Proyectos</Typography>
+  <Typography tag="h3" bold id="projects"
+    ><IconTitleShape class={css.iconTitle} /> Proyectos</Typography
+  >
   <ul>
     {projects.map((p) => <ProjectCard {...p} />)}
   </ul>

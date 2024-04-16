@@ -1,10 +1,14 @@
 ---
+import IconTitleShape from "@/icons/IconTitleShape.astro";
 import Socials from "./Socials.astro";
 import Typography from "./Typography.astro";
+import css from "@/styles/shared.module.scss";
 ---
 
 <section>
-  <Typography tag="h3" bold id="about">Sobre Mi</Typography>
+  <Typography tag="h3" bold id="about"
+    ><IconTitleShape class={css.iconTitle} /> Sobre Mi</Typography
+  >
   <div>
     <img src="/images/me.png" alt="Mi imagen personal" />
     <x-text>

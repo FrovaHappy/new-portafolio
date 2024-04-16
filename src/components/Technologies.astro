@@ -14,6 +14,8 @@ import IconPrismaOrm from "../icons/IconPrismaOrm.astro";
 import IconVitest from "../icons/IconVitest.astro";
 import Tech from "./Tech.astro";
 import Typography from "./Typography.astro";
+import css from "@/styles/shared.module.scss";
+import IconTitleShape from "@/icons/IconTitleShape.astro";
 interface Data {
   title: string;
   stack: { name: string; icon: (_props: Record<string, any>) => any }[];
@@ -45,7 +47,9 @@ const Sections = [technologies, learnings];
 ---
 
 <section>
-  <Typography tag="h3" bold id="skills">Habilidades</Typography>
+  <Typography tag="h3" bold id="skills"
+    ><IconTitleShape class={css.iconTitle} /> Habilidades</Typography
+  >
   {
     Sections.map(({ title, stack }) => {
       return (
