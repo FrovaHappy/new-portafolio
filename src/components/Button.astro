@@ -38,9 +38,9 @@ const aProps =
 </Tag>
 <style style="scss">
   .base {
-    --h: 28px;
-    --p: var(--padding-1x);
-    --r: var(--radius-1x);
+    --h: calc(24px + var(--padding-2x));
+    --p: var(--padding-2x);
+    --r: var(--radius-2x);
     --b: var(--color-primary);
     width: var(--content-max);
     cursor: pointer;
@@ -57,17 +57,18 @@ const aProps =
     border-radius: var(--r);
   }
   .medium {
-    --h: calc(32px + var(--padding-2x));
-    --p: var(--padding-2x);
-    --r: var(--radius-2x);
+    --h: calc(32px + var(--padding-3x));
+    --p: var(--padding-3x);
+    --r: var(--radius-3x);
   }
   .big {
     --h: calc(48px + var(--padding-3x));
     --p: var(--padding-3x);
-    --r: var(--radius-2x);
+    --r: var(--radius-3x);
   }
   .secondary {
     background: transparent;
+    --b: var(--color-text-alt);
   }
   .danger {
     --b: var(--color-danger);
