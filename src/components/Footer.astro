@@ -1,0 +1,54 @@
+---
+import IconBrandGithub from "../icons/IconBrandGithub.astro";
+import IconHeartFilled from "../icons/IconHeartFilled.astro";
+import IconLink from "../icons/IconLink.astro";
+import Button from "./Button.astro";
+import Typography from "./Typography.astro";
+---
+
+<footer>
+  <Typography tag="h4"
+    >Hecho con <IconHeartFilled class="heart" /> por Frova Happy
+  </Typography>
+  <div>
+    <Button
+      tag="a"
+      url="https://github.com/FrovaHappy/new-portafolio"
+      size="small"
+      style="secondary"
+      text="Repositorio del portafolio"><IconBrandGithub /></Button
+    >
+    <Button
+      tag="a"
+      url="https://old.frovahappy.xyz/"
+      size="small"
+      style="secondary"
+      text="ver Anterior Portafolio"><IconLink /></Button
+    >
+  </div>
+  <Typography tag="p"
+    >apache 2.0 license - {new Date().getFullYear()}</Typography
+  >
+</footer>
+
+<style style="scss">
+  footer {
+    width: var(--content-full);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--padding-3x);
+    padding: calc(var(--padding-5x) * 2);
+    background-color: var(--color-background);
+  }
+  div {
+    display: flex;
+    gap: var(--padding-2x);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .heart {
+    color: red;
+    height: 24px;
+  }
+</style>
