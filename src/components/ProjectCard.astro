@@ -57,6 +57,7 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
   img {
     max-width: 400px;
     aspect-ratio: 16/9;
+    border-radius: var(--padding-2x);
   }
   div {
     display: flex;
@@ -72,5 +73,14 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
     background-color: var(--color-content-alt);
     border-radius: var(--padding-1x);
     padding: var(--padding-1x) calc(var(--padding-1x) * 2);
+  }
+  @media only screen and (max-width: 950px) {
+    li {
+      flex-direction: column;
+    }
+    img {
+      object-fit: cover;
+      max-width: var(--content-full);
+    }
   }
 </style>
