@@ -5,9 +5,10 @@ import Socials from "./Socials.astro";
 import Typography from "./Typography.astro";
 ---
 
-<Typography tag="span" id="home" />
 <section>
-  <div>
+  <div class="anchor"><Typography tag="span" id="home" /></div>
+
+  <article>
     <Socials />
     <x-title>
       <Typography tag="h1" bold><span>Francisco</span> Vera</Typography>
@@ -22,7 +23,7 @@ import Typography from "./Typography.astro";
     <Button size="big" style="primary" text="Curriculum"
       ><IconFile slot="alignRight" /></Button
     >
-  </div>
+  </article>
   <img src="/images/logo-big.webp" alt="imagen del logo grande" />
 </section>
 <style style="scss">
@@ -30,16 +31,21 @@ import Typography from "./Typography.astro";
     color: var(--color-primary);
   }
   section {
+    position: relative;
     margin-top: calc(var(--margin-nav) * -1);
     display: flex;
     gap: var(--padding-3x);
     min-height: calc(100vh + var(--margin-nav));
     align-items: center;
   }
-  div {
+  article {
     display: flex;
     flex-direction: column;
     gap: var(--padding-5x);
+  }
+  .anchor {
+    position: absolute;
+    height: 100%;
   }
   img {
     object-fit: contain;
