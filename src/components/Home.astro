@@ -49,6 +49,12 @@ import Typography from "./Typography.astro";
   }
   img {
     object-fit: contain;
-    height: 250px;
+    max-width: 500px;
+    aspect-ratio: 175/111;
+  }
+  @media only screen and (max-width: 1000px) {
+    section {
+      flex-direction: column-reverse;
+    }
   }
 </style>
