@@ -23,6 +23,7 @@ import css from "@/styles/shared.module.scss";
         </Typography>
       </x-text>
     </div>
+    <Typography tag="h4">Espero Trabajar con ustedes</Typography>
     <Socials />
   </article>
 </section>
@@ -33,7 +34,7 @@ import css from "@/styles/shared.module.scss";
     gap: var(--padding-4x);
   }
   img {
-    height: 250px;
+    height: 200px;
     aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: var(--radius-2x);
@@ -42,7 +43,16 @@ import css from "@/styles/shared.module.scss";
     display: flex;
     gap: var(--padding-4x);
   }
+
+  x-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-4x);
+  }
   article {
     padding-left: var(--padding-5x);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-3x);
   }
 </style>
