@@ -7,7 +7,7 @@ import Typography from "./Typography.astro";
 ---
 
 <footer>
-  <Typography tag="h4"
+  <Typography tag="h4" textCenter
     >Hecho con <IconHeartFilled class="heart" /> por Frova Happy
   </Typography>
   <div>
@@ -27,7 +27,7 @@ import Typography from "./Typography.astro";
     >
   </div>
   <Typography tag="p"
-    >apache 2.0 license - {new Date().getFullYear()}</Typography
+    >Apache 2.0 License - {new Date().getFullYear()}</Typography
   >
 </footer>
 
@@ -51,5 +51,6 @@ import Typography from "./Typography.astro";
   .heart {
     color: red;
     height: 24px;
+    transform: translateY(20%);
   }
 </style>
