@@ -1,9 +1,11 @@
 ---
+import IconFile from "@/icons/IconFile.astro";
 import Typography from "./Typography.astro";
 ---
 
 <nav>
   <div>
+    <IconFile class="btnHome" />
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#projects">Proyectos</a></li>
@@ -14,12 +16,19 @@ import Typography from "./Typography.astro";
 </nav>
 
 <script>
+  // Animate the navigation when is scrolled
   const $nav = document.querySelector("nav");
   window.addEventListener("scroll", () => {
     console.log(window.scrollY);
     window.scrollY !== 0
       ? $nav?.classList.add("scrolling")
       : $nav?.classList.remove("scrolling");
+  });
+
+  // Show element of nav in mobile screen
+  const $btnHome = document.querySelector(".btnHome");
+  $btnHome?.addEventListener("click", () => {
+    document.querySelector("ul")?.classList.toggle("showNav");
   });
 </script>
 <style style="scss">
@@ -72,5 +81,50 @@ import Typography from "./Typography.astro";
       transparent
     );
     backdrop-filter: blur(20px);
+  }
+  .btnHome {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .btnHome {
+      display: block;
+      height: 48px;
+      padding: 10px;
+      border-radius: var(--padding-5x);
+      box-sizing: border-box;
+      color: var(--color-text);
+      transition: 0.2s ease;
+      &:hover {
+        background-color: var(--color-text);
+        color: var(--color-background);
+      }
+    }
+    .showNav {
+      display: flex;
+    }
+    ul {
+      display: none;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 10px 0;
+      padding-top: 30px;
+    }
+    div {
+      align-items: flex-start;
+      flex-direction: column;
+      height: var(--content-max);
+      padding: 20px;
+      background-color: color-mix(
+        in srgb,
+        var(--color-background) 70%,
+        transparent
+      );
+      backdrop-filter: blur(20px);
+    }
+    nav {
+      width: auto;
+      height: auto;
+      padding-left: var(--padding-5x);
+    }
   }
 </style>
