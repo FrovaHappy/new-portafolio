@@ -2,11 +2,18 @@
 interface Props {
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span";
   bold?: boolean;
+  textCenter?: boolean;
   wrap?: "pretty" | "balance";
   id?: string;
 }
-const { tag: Tag, bold = false, wrap = "pretty", id } = Astro.props;
-const className = `${bold ? "bold" : ""} wrap--${wrap}`;
+const {
+  tag: Tag,
+  bold = false,
+  wrap = "pretty",
+  id,
+  textCenter = false,
+} = Astro.props;
+const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap--${wrap}`;
 ---
 
 <Tag class={className}>{id ? <x-anchor id={id} /> : undefined}<slot /></Tag>
@@ -66,5 +73,8 @@ const className = `${bold ? "bold" : ""} wrap--${wrap}`;
   }
   .bold {
     --bold: 200;
+  }
+  .textCenter {
+    text-align: center;
   }
 </style>
