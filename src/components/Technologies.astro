@@ -16,34 +16,56 @@ import Tech from "./Tech.astro";
 import Typography from "./Typography.astro";
 import css from "@/styles/shared.module.scss";
 import IconTitleShape from "@/icons/IconTitleShape.astro";
+import IconBrandGithub from "@/icons/IconBrandGithub.astro";
+import IconFigma from "@/icons/IconFigma.astro";
+import IconLogoGitHub from "@/icons/IconLogoGitHub.astro";
+import IconDiscordJs from "@/icons/IconDiscordJs.astro";
 interface Data {
   title: string;
   stack: { name: string; icon: (_props: Record<string, any>) => any }[];
 }
 const technologies: Data = {
-  title: "Tecnologías y Frameworks",
+  title: "Lenguajes",
   stack: [
+    { name: "TypeScript", icon: IconTypeScript },
     { name: "Javascript", icon: IconJavaScript },
     { name: "CSS", icon: IconCss },
     { name: "HTML", icon: IconHtml },
-    { name: "Sass", icon: IconSass },
-    { name: "TypeScript", icon: IconTypeScript },
-    { name: "NodeJS", icon: IconNodeJs },
+  ],
+};
+const frontend: Data = {
+  title: "Frontend",
+  stack: [
+    { name: "NextJs", icon: IconNextJs },
     { name: "ReactJs", icon: IconReactJs },
+    { name: "Sass", icon: IconSass },
+  ],
+};
+const backends: Data = {
+  title: "Backends",
+  stack: [
+    { name: "NodeJS", icon: IconNodeJs },
     { name: "MongoBB", icon: IconMongoDb },
     { name: "ExpressJs", icon: IconExpressJs },
+    { name: "DiscordJs", icon: IconDiscordJs },
+  ],
+};
+const tools: Data = {
+  title: "Herramientas",
+  stack: [
+    { name: "GitHub", icon: IconLogoGitHub },
+    { name: "Figma", icon: IconFigma },
   ],
 };
 const learnings: Data = {
   title: "Aprendiendo",
   stack: [
-    { name: "NextJs", icon: IconNextJs },
     { name: "Astro", icon: IconAstro },
     { name: "Prisma Orm", icon: IconPrismaOrm },
     { name: "Vitest", icon: IconVitest },
   ],
 };
-const Sections = [technologies, learnings];
+const Sections = [technologies, frontend, backends, tools, learnings];
 ---
 
 <section>
@@ -88,7 +110,7 @@ const Sections = [technologies, learnings];
   article {
     padding-left: var(--padding-5x);
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--padding-3x);
   }
   ul {
