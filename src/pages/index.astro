@@ -15,13 +15,15 @@ import Layout from "../layouts/Layout.astro";
     <Projects />
     <Technologies />
     <About />
+    {/*The span is for add a gap before the footer */}
+    <span></span>
   </main>
 </Layout>
 <style style="scss">
   main {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--padding-5x) * 5);
+    gap: calc(var(--padding-5x) * 4);
     max-width: var(--content-max-width);
     padding: 0 10%;
     margin: auto;
