@@ -11,19 +11,35 @@ import css from "@/styles/shared.module.scss";
   >
   <article>
     <div>
-      <img src="/images/me.png" alt="Mi imagen personal" />
       <x-text>
-        <Typography tag="h4" wrap="balance">
-          Como todos los programadores me apasiona la programación , me gusta
-          crear características que le puedan servir a otras personas.
+        <Typography tag="h5" wrap="balance" textColor="textAlt">
+          !Hola! soy Francisco Vera, mis amigos me llaman Happy.
         </Typography>
-        <Typography tag="h4" wrap="balance">
-          Me he formado en gran parte de manera autodidacta, usando de punto de
-          partida lo aprendido el año y medio que estuve en la facultad
+        <Typography tag="h5" wrap="balance" textColor="textAlt">
+          Desde temprana edad he demostrado interés por el mundo de la
+          informática
+        </Typography>
+        <Typography tag="h5" wrap="balance" textColor="textAlt">
+          En el 2018 entre en la Universidad en la carrera de Lic. en Sistema de
+          Información, estuve 1 año y medio en la carrera.
+        </Typography>
+        <Typography tag="h5" wrap="balance" textColor="textAlt">
+          Luego de un tiempo decidí retomar mis estudios, esta ves de manera
+          autodidacta, desde entonces he dedicado mucho tiempo para mejorar mi
+          nivel de conocimiento.
+        </Typography>
+        <Typography tag="h5" wrap="balance" textColor="textAlt">
+          Destaco mi capacidad de crear soluciones para un cliente de manera
+          rápida, eficiente y de manera profesional.
         </Typography>
       </x-text>
+      <img src="/images/me.png" alt="Mi imagen personal" />
     </div>
-    <Typography tag="h4">Espero Trabajar con ustedes</Typography>
+    <Typography tag="h3">Contactos</Typography>
+    <Typography tag="h5" wrap="balance" textColor="textAlt">
+      ¡Estoy emocionado por nuevas oportunidades! Puedes contactarme a través de
+      mi LinkedIn o por correo electrónico a frovahappy@gmail.com.
+    </Typography>
     <Socials />
   </article>
 </section>
@@ -48,7 +64,7 @@ import css from "@/styles/shared.module.scss";
   x-text {
     display: flex;
     flex-direction: column;
-    gap: var(--padding-4x);
+    gap: var(--padding-3x);
   }
   article {
     padding-left: var(--padding-5x);
