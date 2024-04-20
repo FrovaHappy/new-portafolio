@@ -3,6 +3,7 @@ interface Props {
   tag: "h1" | "h2" | "h3" | "h4" | "h5" | "p" | "span";
   bold?: boolean;
   textCenter?: boolean;
+  textColor?: "primary" | "text" | "textAlt";
   wrap?: "pretty" | "balance";
   id?: string;
 }
@@ -12,8 +13,9 @@ const {
   wrap = "pretty",
   id,
   textCenter = false,
+  textColor,
 } = Astro.props;
-const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap--${wrap}`;
+const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap--${wrap} textColor--${textColor ?? ""}`;
 ---
 
 <Tag class={className}>{id ? <x-anchor id={id} /> : undefined}<slot /></Tag>
@@ -27,12 +29,13 @@ const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap-
   span {
     --bold: 0;
     --wrap: pretty;
+    --txtColor: var(--color-text);
     all: unset;
     position: relative;
     display: block;
     padding: 0;
     font-weight: calc(500 + var(--bold));
-    color: var(--color-text);
+    color: var(--txtColor);
     text-wrap: var(--wrap);
   }
   span {
@@ -43,6 +46,7 @@ const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap-
     top: var(--margin-nav);
   }
   .wrap {
+    color: inherit;
     &--pretty {
       --wrap: pretty;
     }
@@ -76,5 +80,16 @@ const className = `${bold ? "bold" : ""} ${textCenter ? "textCenter" : ""} wrap-
   }
   .textCenter {
     text-align: center;
+  }
+  .textColor {
+    &--primary {
+      --txtColor: var(--color-primary);
+    }
+    &--text {
+      --txtColor: var(--color-text);
+    }
+    &--textAlt {
+      --txtColor: var(--color-text-alt) !important;
+    }
   }
 </style>
