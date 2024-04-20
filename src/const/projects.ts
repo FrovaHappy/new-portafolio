@@ -40,13 +40,19 @@ const projects: ProjectData[] = [
         url: "https://animehoshi.xyz/",
         color: "#000000",
       },
+      {
+        name: "Docs",
+        icon: "IconFile",
+        url: "https://docs.animehoshi.xyz/",
+        color: "#000000",
+      },
     ],
   },
   {
     title: "Beatriz ~ Dono",
     description:
       "Bot Multi-propósito, que actualmente cuenta con dos funciones principales /colors que permite cambiar el color del nombre y /welcome que personaliza las bienvenidas.",
-    image: "/images/projects/animehoshi.png",
+    image: "/images/projects/beatriz-bot.png",
     technologies: [
       { name: "DiscordJs", color: "#000000" },
       { name: "Typescript", color: "#000000" },
