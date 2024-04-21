@@ -31,7 +31,7 @@ const projects: ProjectData[] = [
       {
         name: "Github",
         icon: "IconBrandGithub",
-        url: "https://github.com/FrovaHappy/monorepo-scrapping-anime",
+        url: "https://github.com/FrovaHappy/anime-hoshi",
         color: "#000000",
       },
       {
