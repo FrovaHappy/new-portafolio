@@ -8,6 +8,7 @@ interface Props {
   tag?: "a" | "button" | "div";
   url?: string;
   text: string;
+  downloaded?: boolean;
   style: "primary" | "secondary" | "danger";
   id?: string;
 }
@@ -19,6 +20,7 @@ const {
   tag: Tag = "div",
   url = "#",
   className = "",
+  downloaded = false,
 } = Astro.props;
 const aProps =
   Tag == "a"
@@ -26,6 +28,7 @@ const aProps =
         href: url,
         target: "_blank",
         rel: "noopener noreferrer",
+        downloaded,
       }
     : {};
 ---
