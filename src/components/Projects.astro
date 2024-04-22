@@ -1,4 +1,5 @@
 ---
+import IconX from "@/icons/IconX.astro";
 import projects from "../const/projects";
 import IconArrowRight from "../icons/IconArrowRight.astro";
 import IconTitleShape from "../icons/IconTitleShape.astro";
@@ -13,7 +14,7 @@ import css from "@/styles/shared.module.scss";
     ><IconTitleShape class={css.iconTitle} /> Proyectos</Typography
   >
   <ul>
-    {projects.map((p) => <ProjectCard {...p} />)}
+    {projects.slice(0, 2).map((p) => <ProjectCard {...p} />)}
     <Button
       size="medium"
       style="secondary"
@@ -21,11 +22,25 @@ import css from "@/styles/shared.module.scss";
       id="projects-btn"><IconArrowRight slot="alignLeft" /></Button
     >
   </ul>
+  <dialog>
+    <ul>
+      <Button size="medium" style="secondary" text="" id="modal-close"
+        ><IconX slot="alignLeft" /></Button
+      >
+      {projects.slice(2).map((p) => <ProjectCard {...p} />)}
+      <span>Este es el Final...</span>
+    </ul>
+  </dialog>
 </section>
 <script>
   const $projectBtn = document.querySelector("#projects-btn");
+  const $modalBtnClose = document.querySelector("#modal-close");
+  const $dialog = document.querySelector("dialog");
   $projectBtn?.addEventListener("click", () => {
-    console.log("hola");
+    $dialog?.showModal();
+  });
+  $modalBtnClose?.addEventListener("click", () => {
+    $dialog?.close();
   });
 </script>
 <style lang="scss">
@@ -40,5 +55,22 @@ import css from "@/styles/shared.module.scss";
     display: flex;
     flex-direction: column;
     gap: var(--padding-3x);
+  }
+  dialog {
+    background: #00000080;
+
+    height: 100%;
+    padding: 20px 10%;
+    backdrop-filter: blur(20px);
+    & > ul {
+      position: relative;
+      padding: 0;
+      & > span {
+        width: 100%;
+        text-align: center;
+        color: var(--color-text);
+        padding: var(--padding-5x) 0;
+      }
+    }
   }
 </style>
