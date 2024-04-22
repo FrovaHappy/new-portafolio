@@ -87,6 +87,31 @@ const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    title: "Portafolio Anterior",
+    description:
+      "Este portafolio tenia un diseño y disposición diferente al actual, los datos se cargaban del los readmes de los proyectos",
+    image: "/images/projects/old-portafolio.png",
+    technologies: [
+      { name: "Typescript", color: "#000000" },
+      { name: "ReactJs", color: "#000000" },
+    ],
+
+    links: [
+      {
+        name: "Github",
+        icon: "IconBrandGithub",
+        url: "https://github.com/FrovaHappy/portafolio",
+        color: "#000000",
+      },
+      {
+        name: "Website",
+        icon: "IconLink",
+        url: "https://old.frovahappy.xyz/",
+        color: "#000000",
+      },
+    ],
+  },
 ];
 
 export default projects;
