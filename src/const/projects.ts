@@ -1,7 +1,7 @@
 export interface ProjectData {
   title: string;
   description: string;
-  image: string;
+  image: string[];
   technologies: {
     name: string;
     color: string;
@@ -18,7 +18,7 @@ const projects: ProjectData[] = [
     title: "Anime Hoshi",
     description:
       "Recibe notificaciones de las ultimas emisiones de anime, de tus paginas como CrunchyRoll, animeFlv y más.",
-    image: "/images/projects/animehoshi.png",
+    image: ["/images/projects/animehoshi.png"],
     technologies: [
       { name: "ScrapingWeb", color: "#000000" },
       { name: "Typescript", color: "#000000" },
@@ -52,7 +52,7 @@ const projects: ProjectData[] = [
     title: "Beatriz ~ Dono",
     description:
       "Bot Multi-propósito, que actualmente cuenta con dos funciones principales /colors que permite cambiar el color del nombre y /welcome que personaliza las bienvenidas.",
-    image: "/images/projects/beatriz-bot.png",
+    image: ["/images/projects/beatriz-bot.png"],
     technologies: [
       { name: "DiscordJs", color: "#000000" },
       { name: "Typescript", color: "#000000" },
@@ -91,7 +91,7 @@ const projects: ProjectData[] = [
     title: "Portafolio Anterior",
     description:
       "Este portafolio tenia un diseño y disposición diferente al actual, los datos se cargaban del los readmes de los proyectos",
-    image: "/images/projects/old-portafolio.png",
+    image: ["/images/projects/old-portafolio.png"],
     technologies: [
       { name: "Typescript", color: "#000000" },
       { name: "ReactJs", color: "#000000" },

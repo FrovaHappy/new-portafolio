@@ -16,7 +16,7 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
 ---
 
 <li>
-  <img src={image} alt={`imagen del proyecto ${title}`} loading="lazy" />
+  <img src={image[0]} alt={`imagen del proyecto ${title}`} loading="lazy" />
   <div class="content">
     <Typography tag="h4" bold>{title}</Typography>
     <div>
@@ -48,6 +48,7 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
   li {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: var(--padding-2x) var(--padding-3x);
     padding: var(--padding-3x);
     background-color: var(--color-content);
@@ -55,7 +56,8 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
     color: var(--color-text-alt);
   }
   img {
-    max-width: 400px;
+    width: 100%;
+    object-fit: cover;
     aspect-ratio: 16/9;
     border-radius: var(--padding-2x);
   }
@@ -73,14 +75,5 @@ const Icons: Record<string, (_props: Record<string, any>) => any> = {
     background-color: var(--color-content-alt);
     border-radius: var(--padding-1x);
     padding: var(--padding-1x) calc(var(--padding-1x) * 2);
-  }
-  @media only screen and (max-width: 950px) {
-    li {
-      flex-direction: column;
-    }
-    img {
-      object-fit: cover;
-      max-width: var(--content-full);
-    }
   }
 </style>
