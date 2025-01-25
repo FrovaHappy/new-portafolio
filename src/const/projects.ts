@@ -88,10 +88,10 @@ const projects: ProjectData[] = [
     ],
   },
   {
-    title: "Portafolio Anterior",
+    title: "Primer Portafolio",
     description:
       "Este portafolio tenia un diseño y disposición diferente al actual, los datos se cargaban del los readmes de los proyectos",
-    image: ["/images/projects/old-portafolio.png"],
+    image: ["/images/projects/oldportafolio/0.webp", "/images/projects/oldportafolio/1.webp"],
     technologies: [
       { name: "Typescript", color: "#000000" },
       { name: "ReactJs", color: "#000000" },
@@ -101,13 +101,13 @@ const projects: ProjectData[] = [
       {
         name: "Github",
         icon: "IconBrandGithub",
-        url: "https://github.com/FrovaHappy/portafolio",
+        url: "https://github.com/FrovaHappy/old-portafolio",
         color: "#000000",
       },
       {
         name: "Website",
         icon: "IconLink",
-        url: "https://old.frovahappy.xyz/",
+        url: "https://oldfrovahappy.vercel.app/",
         color: "#000000",
       },
     ],
