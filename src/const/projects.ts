@@ -15,7 +15,7 @@ export interface ProjectData {
 }
 const projects: ProjectData[] = [
   {
-    title: "Anime Hoshi",
+    title: "Anime Hoshi (Archivado)",
     description:
       "Recibe notificaciones de las ultimas emisiones de anime, de tus paginas como CrunchyRoll, animeFlv y más.",
     image: ["/images/projects/animehoshi.png"],
@@ -88,7 +88,7 @@ const projects: ProjectData[] = [
     ],
   },
   {
-    title: "Primer Portafolio",
+    title: "Primer Portafolio (Archivado)",
     description:
       "Este portafolio tenia un diseño y disposición diferente al actual, los datos se cargaban del los readmes de los proyectos",
     image: ["/images/projects/oldportafolio/0.webp", "/images/projects/oldportafolio/1.webp"],
