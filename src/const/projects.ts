@@ -17,38 +17,33 @@ const projects: ProjectData[] = [
   {
     title: "Beatriz ~ Dono",
     description:
-      "Bot Multi-propósito, que actualmente cuenta con dos funciones principales /colors que permite cambiar el color del nombre y /welcome que personaliza las bienvenidas.",
+      "Este proyecto es un bot que permite la implementación rápida de funcionalidades para discord, por el momento cuenta con dos comandos: colors, welcome, pero en el futuro se podrá agregar más comandos.",
     image: ["/images/projects/beatriz-bot.png"],
     technologies: [
       { name: "DiscordJs", color: "#000000" },
       { name: "Typescript", color: "#000000" },
       { name: "ReactJs", color: "#000000" },
       { name: "NodeJs", color: "#000000" },
-      { name: "PrismaOrm", color: "#000000" },
+      { name: "Drizzle", color: "#000000" },
+      { name: "Monorepo", color: "#000000" },
     ],
     links: [
       {
-        name: "Github | Bot",
+        name: "Github",
         icon: "IconBrandGithub",
-        url: "https://github.com/FrovaHappy/beatriz-bot",
-        color: "#000000",
-      },
-      {
-        name: "Github | WebPages",
-        icon: "IconBrandGithub",
-        url: "https://github.com/FrovaHappy/beatriz-bot-website",
+        url: "https://github.com/FrovaHappy/beatriz-dono",
         color: "#000000",
       },
       {
         name: "Website",
         icon: "IconLink",
-        url: "https://beatriz-bot-website.vercel.app/",
+        url: "https://beatrizbot.vercel.app/",
         color: "#000000",
       },
       {
         name: "Docs",
         icon: "IconFile",
-        url: "https://frovahappy.gitbook.io/beatriz-bot-docs/",
+        url: "https://beatrizbot.vercel.app/home",
         color: "#000000",
       },
     ],
@@ -65,24 +60,13 @@ const projects: ProjectData[] = [
       { name: "NodeJs", color: "#000000" },
       { name: "ExpressJs", color: "#000000" },
       { name: "MongoOse", color: "#000000" },
+      { name: "Monorepo", color: "#000000" },
     ],
     links: [
       {
         name: "Github",
         icon: "IconBrandGithub",
         url: "https://github.com/FrovaHappy/anime-hoshi",
-        color: "#000000",
-      },
-      {
-        name: "Website",
-        icon: "IconLink",
-        url: "https://animehoshi.xyz/",
-        color: "#000000",
-      },
-      {
-        name: "Docs",
-        icon: "IconFile",
-        url: "https://docs.animehoshi.xyz/",
         color: "#000000",
       },
     ],
