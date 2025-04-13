@@ -3,44 +3,41 @@ import IconTitleShape from "@/icons/IconTitleShape.astro";
 import Socials from "./Socials.astro";
 import Typography from "./Typography.astro";
 import css from "@/styles/shared.module.scss";
+
+const personal = {
+  about: {
+    title: "Quién soy",
+    description: `
+      ¡Hola! Soy Francisco Vera (Happy para los amigos), desarrollador fullstack con experiencia construyendo soluciones web sólidas, escalables y centradas en el usuario.
+      Domino tanto frontend como backend, lo que me permite abordar proyectos de manera integral, optimizando tiempos y recursos.
+      Ya sea que necesites lanzar un producto, escalar una aplicación existente o simplemente sumar a alguien que se involucre con compromiso real, puedo ayudarte a llevar tu proyecto al siguiente nivel.
+      ¿Trabajamos juntos? Estoy listo para aportar valor desde el primer día.
+  `,
+  },
+};
 ---
 
 <section>
   <Typography tag="h3" bold id="about"
-    ><IconTitleShape class={css.iconTitle} /> Sobre Mi</Typography
+    ><IconTitleShape class={css.iconTitle} /> {personal.about.title}</Typography
   >
   <article>
     <div>
-      <x-text>
-        <Typography tag="h5" wrap="balance" textColor="textAlt">
-          !Hola! soy Francisco Vera, mis amigos me llaman Happy.
-        </Typography>
-        <Typography tag="h5" wrap="balance" textColor="textAlt">
-          Desde temprana edad he demostrado interés por el mundo de la
-          informática
-        </Typography>
-        <Typography tag="h5" wrap="balance" textColor="textAlt">
-          En el 2018 entre en la Universidad en la carrera de Lic. en Sistema de
-          Información, estuve 1 año y medio en la carrera.
-        </Typography>
-        <Typography tag="h5" wrap="balance" textColor="textAlt">
-          Luego de un tiempo decidí retomar mis estudios, esta ves de manera
-          autodidacta, desde entonces he dedicado mucho tiempo para mejorar mi
-          nivel de conocimiento.
-        </Typography>
-        <Typography tag="h5" wrap="balance" textColor="textAlt">
-          Destaco mi capacidad de crear soluciones para un cliente de manera
-          rápida, eficiente y de manera profesional.
-        </Typography>
-      </x-text>
       <img src="/images/me.png" alt="Mi imagen personal" />
+      <x-text>
+        {
+          personal.about.description
+            .split("\n")
+            .filter((line) => line.trim() !== "")
+            .map((line) => (
+              <Typography tag="h5" wrap="balance" textColor="textAlt">
+                {line}
+              </Typography>
+            ))
+        }
+        <Socials />
+      </x-text>
     </div>
-    <Typography tag="h3">Contactos</Typography>
-    <Typography tag="h5" wrap="balance" textColor="textAlt">
-      ¡Estoy emocionado por nuevas oportunidades! Puedes contactarme a través de
-      mi LinkedIn o por correo electrónico a frovahappy@gmail.com.
-    </Typography>
-    <Socials />
   </article>
 </section>
 <style lang="scss">
@@ -65,6 +62,10 @@ import css from "@/styles/shared.module.scss";
     display: flex;
     flex-direction: column;
     gap: var(--padding-3x);
+    width: 75%;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
   }
   article {
     padding-left: var(--padding-5x);
